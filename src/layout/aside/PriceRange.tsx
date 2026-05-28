@@ -16,11 +16,7 @@ export default function PriceRange() {
 
   const minDistance = 10;
 
-  const handleChange = (
-    event: Event,
-    newValue: number[],
-    activeThumb: number,
-  ) => {
+  const handleChange = (newValue: number[], activeThumb: number) => {
     if (activeThumb === 0) {
       dispatch(
         setPriceRange([
@@ -54,7 +50,7 @@ export default function PriceRange() {
         className="mt-6"
         getAriaLabel={() => "Minimum Price"}
         value={selectedRange}
-        onChange={handleChange}
+        onChange={() => handleChange}
         valueLabelDisplay="on"
         getAriaValueText={valuetext}
         disableSwap
